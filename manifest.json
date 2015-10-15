@@ -1,0 +1,28 @@
+{
+  "name": "Long Extension Title",
+  "short_name": "Short Name",
+  "version": "1.0.0",
+  "manifest_version": 2,
+  "description": "Description of the Extension",
+  "icons": {
+    "128": "16.png"
+  },
+  "browser_action": {
+    "default_icon": "16.png",
+    "default_title": "",
+    "default_popup": "popup.html"
+  },
+  "background": {
+    "scripts": ["background.js"]
+  },
+  "content_scripts": [{
+    "matches": ["http://182.254.228.211:9099/*"],
+    "js": ["d.js","jquery.js"],
+    "run_at": "document_end"
+  }],
+  "permissions": [
+    "tabs",
+    "http://182.254.228.211:9099/"
+  ],
+  "web_accessible_resources": ["popup.js"]
+}
