@@ -1,5 +1,9 @@
-1.´Ë½Å±¾ÊÇÑ§Ï°chrome²å¼ş
-2.Ö÷Òª¹¦ÄÜÊÇ²Ù×÷Ò³ÃæÔªËØ
+- æ­¤è„šæœ¬æ˜¯å­¦ä¹ chromeæ’ä»¶
+
+- ä¸»è¦åŠŸèƒ½æ˜¯æ“ä½œé¡µé¢å…ƒç´ 
+
+
+```
 {
 ...
   },
@@ -23,9 +27,9 @@
   ],
   "web_accessible_resources": ["popup.js"] 
 }
-popup.jsÖ÷ÒªÊÇÕë¶ÔÓÚpopup.htmlÖĞµÄÔªËØ²Ù×÷£¬ÆäÖĞchrome.tabs.sendMessageÊÇ·¢ËÍÒ»¸öÀàËÆÓÚ¹ã²¥µÄĞÅÏ¢³öÈ¥
-d.js ÊÇÊµ¼Ê²Ù×÷Ò³ÃæÔªËØµÄ½Å±¾
-popup.jsºËĞÄ´úÂë£º
+popup.jsä¸»è¦æ˜¯é’ˆå¯¹äºpopup.htmlä¸­çš„å…ƒç´ æ“ä½œï¼Œå…¶ä¸­chrome.tabs.sendMessageæ˜¯å‘é€ä¸€ä¸ªç±»ä¼¼äºå¹¿æ’­çš„ä¿¡æ¯å‡ºå»
+d.js æ˜¯å®é™…æ“ä½œé¡µé¢å…ƒç´ çš„è„šæœ¬
+popup.jsæ ¸å¿ƒä»£ç ï¼š
      chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
             chrome.tabs.sendMessage(tabs[0].id, {startDate: $("#tbStartDate").val(),BugType:"WeekRsoleBug"}, function(response) {
                 console.log(response.farewell);
@@ -40,13 +44,14 @@ popup.jsºËĞÄ´úÂë£º
         "from a content script:" + sender.tab.url :
             "from the extension");
 			
-d.jsÖĞµÄºËĞÄ´úÂë£º
+d.jsä¸­çš„æ ¸å¿ƒä»£ç ï¼š
        chrome.runtime.onMessage.addListener(
     function(request, sender, sendResponse) {
         console.log(sender.tab ?
         "from a content script:" + sender.tab.url :
             "from the extension");
 
-        if (request.BugType == "weekAddBug"){ ½ÓÊÜpopup.jsÖĞµÄ¹ã²¥£¬´ïµ½ºÍpopup.htmlÒ³Ãæ½»»¥µÄ¹¦ÄÜ
+        if (request.BugType == "weekAddBug"){ æ¥å—popup.jsä¸­çš„å¹¿æ’­ï¼Œè¾¾åˆ°å’Œpopup.htmlé¡µé¢äº¤äº’çš„åŠŸèƒ½
          
         }
+```
